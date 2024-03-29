@@ -23,7 +23,7 @@ npm start
 
 # For Reviewers
 
-See ./src/extension-common/FOR-REVIEWERS.md.
+See ./src/extension-common/FOR_REVIEWERS.md.
 
 # Release Instructions
 
