@@ -71,6 +71,8 @@
 
     privates._strToHostObj = [
       /* Please, don't use proxies directly (without PAC-script). */
+      'n.thenewone.lol',
+      's.thenewone.lol',
       // antizapret.prostovpn.org:
       'proxy.antizapret.prostovpn.org',
       'proxy-ssl.antizapret.prostovpn.org',
