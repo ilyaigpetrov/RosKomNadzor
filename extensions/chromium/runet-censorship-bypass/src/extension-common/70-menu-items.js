@@ -33,7 +33,7 @@
 
       antizapretInfo: {
         title: 'Сайт в реестре блокировок?',
-        getUrl: (blockedUrl) => 'https://antizapret.info/index.php?search=' + new URL(blockedUrl).hostname,
+        getUrl: (blockedUrl) => 'https://reestr.rublacklist.net/?q=' + new URL(blockedUrl).hostname,
         order: 4,
       },
 
