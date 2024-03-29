@@ -5,8 +5,6 @@ const pacUrls = [
   'https://anticensority.github.io/generated-pac-scripts/anticensority.pac',
   // GitHub repo (anticensority), cached:
   'https://raw.githubusercontent.com/anticensority/generated-pac-scripts/master/anticensority.pac',
-  // First official, shortened, not cached:
-  'https://rebrand.ly/ac-chrome-anticensority-pac',
 ];
 
 const commonContext = {
@@ -57,7 +55,6 @@ exports.contexts.beta = Object.assign({}, commonContext, {
   anticensorityPacUrls: [
     'https://raw.githubusercontent.com/anticensority/for-testing/master/anticensority.pac',
     'https://anticensority.github.io/for-testing/anticensority.pac',
-    'https://rebrand.ly/ac-beta-pac',
   ],
   version: '1.14',
   versionSuffix: '',
