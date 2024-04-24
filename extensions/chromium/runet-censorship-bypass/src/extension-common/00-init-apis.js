@@ -280,7 +280,16 @@ console.log('Extension started.');
 
   const compareVersions = (a, b) => versionToInt(a) - versionToInt(b);
 
+  let give;
+  const promise = new Promise((resolve) => {
+    give = resolve;
+  });
+
   window.apis = {
+    consent: {
+      promise,
+      give,
+    },
     platform: {
       ifFirefox: navigator.userAgent.toLowerCase().includes('firefox'),
     },

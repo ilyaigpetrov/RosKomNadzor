@@ -579,6 +579,14 @@
 
   // ON EACH LAUNCH, STARTUP, RELOAD, UPDATE, ENABLE
   (async () => {
+    let ifConsentGiven = await window.utils.promisedLocalStorage.get('ifConsentGiven');
+    if (!ifConsentGiven) {
+      window.utils.openAndFocus('/pages/consent/index.html');
+      await window.apis.consent.promise;
+      ifConsentGiven = true
+      await window.utils.promisedLocalStorage.set({ ifConsentGiven });
+    }
+
     let oldAntiCensorRu = await window.utils.promisedLocalStorage.get('antiCensorRu') || {};
 
     const otherKeys = [

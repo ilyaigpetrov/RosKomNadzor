@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="image/x-icon" href="./ribbon-128.ico">
+    <meta charset="utf-8">
+    <title>Согласие на сбор данных</title>
+    <style>
+      p, ol { font-size: 16px }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 0 auto; max-width: 35rem; text-align: justify; font-family: sans-serif">
+      <img src="./ribbon-128.png">
+      <h1>Согласие на сбор данных / Data Collection Consent</h1>
+      <p>
+      Этот документ написан на двух языках. Английский предпочтительней.
+      </p>
+      <p>
+      This document is written in two languages. English is preferable.
+      </p>
+      <p>
+      Привет! На связи команда разработчиков браузерного расширения «Обход блокировок Рунета».
+      Вы либо только что установили расширение, либо только что обновились до новой версии.
+      По новым правилам мы должны получить от вас согласие на сбор ваших данных и передачу их
+      третьим лицам.
+      </p>
+      <p>
+      Hi! It's "Runet Censorship Bypass" browser extension developers team.
+      You have just installed the extension or just updated to a new version.
+      According to the new requirements we have to get your consent before collecting your data and
+      sharing it with 3rd parties.
+      </p>
+      <p>
+      Сообщаем вам, что после первого запуска расширения и при дальнейшем его использовании
+      настроенные в расширении PAC-скрипты и прокси-сервера могут собирать или уже* собирают
+      некоторые ваши данные. Какие именно, зависит от выбранного вами поставщика этих ресурсов,
+      так что рекомендуем ознакомиться с их соответствующей политикой конфиденциальности (Privacy
+      Policy).
+      <br>
+      * Если вы установили и пользовалсись расширением уже некоторое время. Этого экрана согласия не
+      было в старых версиях.
+      </p>
+      <p>
+      We inform you that starting from the first launch of the extension and on further usage chosen
+      PAC-scripts and proxy-servers may collect or are already* collecting some of your data. Which
+      exactly depends on the chosen provider of these resources so we recommend you to get
+      acquainted with their corresponding Privacy Policy.
+      <br>
+      * If you have installed and have been using the extension for some time already. This consent
+      screen wasn't shown in the old versions.
+      </p>
+      <p>
+      При первом запуске и по умолчанию будут использоваться PAC-скрипт и встроенные в него
+      прокси-сервера, предоставляемые <a href="https://antizapret.prostovpn.org:8443">проектом
+      "АнтиЗапрет"</a>, — политику конфиденциальности этого решения см. в
+      <a href="https://antizapret.prostovpn.org:8443/faq.html">FAQ</a> под заголовком "Какие данные
+      собирает сервис и каким образом они используются?".
+      </p>
+      <p>
+      On the first launch and by default the PAC-script and its built-in proxy-servers provided by
+      <a href="https://antizapret.prostovpn.org:8443">project "AntiZapret" (RU)</a> will be used, —
+      see its Privacy Policy in
+      <a href="https://antizapret.prostovpn.org:8443/faq.html">the FAQ (RU)</a> under the title
+      "Какие данные собирает сервис и каким образом они используются?". Its translation to EN is
+      present in the Privacy Policy of the extension.
+      </p>
+      <p>
+      Политику конфиденциальности самого расширения см.
+      <a
+        href="https://github.com/anticensority/runet-censorship-bypass/wiki/Privacy-Policy-|-Политика-конфиденциальности"
+      >здесь (EN)</a>.
+      </p>
+      <p>
+      See the Privacy Policy of this extension
+      <a
+        href="https://github.com/anticensority/runet-censorship-bypass/wiki/Privacy-Policy-|-Политика-конфиденциальности"
+      >here</a>.
+      </p>
+      <p>
+        В расширении представлены кнопки / There are these buttons in the extension:
+      </p>
+      <ol>
+        <li>
+          "Через Google Translate" / "Via Google Translate"
+        </li><li>
+          "Из кэша Google" / "From Google Cache"
+        </li><li>
+          "Из архива archive.org" / "From archive.org archive"
+        </li><li>
+          "Разблокировать по-другому" / "Unblock another way"
+        </li><li>
+          "Сайт в реестре блокировок?" / "Is site in the registry of blockings?"
+        </li>
+      </ol>
+      <p>
+        Все эти кнопки передают URL-адрес текущей вкладки в соответствующие службы. /
+        All these buttons share URL-address of the current tab to corresponding services.
+      </p>
+      <button id="agreeBtn">Разрешаю собирать заявленные данные / Allow claimed data collection
+      </button>
+      <button id="rejectBtn">Нет, удалите расширение / No, delete this extension
+      </button>
+    </div>
+    <script src="./index.js"></script>
+    <script src="../lib/keep-links-clickable.js"></script>
+  </body>
+</html>
