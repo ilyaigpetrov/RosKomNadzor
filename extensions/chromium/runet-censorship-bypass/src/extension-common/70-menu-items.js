@@ -13,7 +13,7 @@
         order: 0,
       },
 
-      hostTracker: {
+      googleCache: {
         title: 'Из кэша Google',
         getUrl: (blockedUrl) => 'http://webcache.googleusercontent.com/search?q=cache:' + blockedUrl,
         order: 1,
