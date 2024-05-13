@@ -37,7 +37,7 @@ I decided to write an anti-censorship extension for Chromium before they strike 
 ## How it Works
 
 0. PAC script is a JavaScript file, triggered on every URL request, which tells the browser which proxy to use if any for this particular URL.
-1. The Chrome Extension sets the PAC script in browser settings and keeps it synced with the PAC script on the server. | (offering Antizapret (hosted on a dedicated server) or Anticensority (hosted on GitHub)).
+1. The Chrome Extension sets the PAC-script in browser settings and keeps it synced with the PAC script on the server. It offers Antizapret (hosted on a dedicated server) or Anticensority (hosted on GitHub) built-in PAC scripts for the user choice.
 2. On every request the PAC script checks if the host is blocked or if its IP is blocked.
 3. If an address is blocked, the PAC script returns the proxy server to the browser. The Antizapret PAC-script uses its own proxy servers and the Anticensority PAC-script uses local Tor.
 4. PAC scripts on servers are updated periodically from https://github.com/zapret-info/z-i.
