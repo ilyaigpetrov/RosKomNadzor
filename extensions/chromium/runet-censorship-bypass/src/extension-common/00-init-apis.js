@@ -280,8 +280,10 @@ console.log('Extension started.');
 
   const compareVersions = (a, b) => versionToInt(a) - versionToInt(b);
 
+  const ifFirefox = navigator.userAgent.toLowerCase().includes('firefox');
+
   let give;
-  const promise = new Promise((resolve) => {
+  const promise = !ifFirefox ? Promise.resolve() : new Promise((resolve) => {
     give = resolve;
   });
 
@@ -291,7 +293,7 @@ console.log('Extension started.');
       give,
     },
     platform: {
-      ifFirefox: navigator.userAgent.toLowerCase().includes('firefox'),
+      ifFirefox,
     },
     version: {
       ifMini: false,
