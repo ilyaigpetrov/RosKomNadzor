@@ -1,0 +1,16 @@
+{
+  "permissions": [
+    "offscreen"
+    , "activeTab"
+    , "contextMenus"
+    , "storage"
+    , "clipboardWrite"
+],
+
+  "minimum_chrome_version": "88.0.0.0",
+
+  "background": {
+    "service_worker": "/src/bg/index.mjs",
+    "type": "module"
+  }
+}

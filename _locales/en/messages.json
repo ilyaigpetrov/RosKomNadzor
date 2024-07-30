@@ -1,0 +1,45 @@
+{
+  "ExtensionName": {
+    "message": "Runet censorship bypass",
+    "description": "Name of the extension."
+  },
+  "ExtensionDescription": {
+    "message": "Copy Unicode URLs to clipboard without nasty percent-encodings or Punycode!",
+    "description": "Description of the extension."
+  },
+  "FOR_TESTING": {
+    "message": "FOR TESTING"
+  },
+
+  "IfToDecode": {
+    "message": "If to decode",
+    "description": ""
+  },
+  "IfToEncodeUrlTerminators": {
+    "message": "If to encode URL terminators",
+    "description": ""
+  },
+  "IfToDecodeMultipleTimes": {
+    "message": "If to decode multiple times",
+    "description": ""
+  },
+  "Donate": {
+    "message": "Donate ❤",
+    "description": ""
+  },
+  "CopyUnicodeUrl": {
+    "message": "Copy Unicode URL",
+    "description": ""
+  },
+  "IconHint": {
+    "message": "Click to copy unicode URL into the clipboard",
+    "description": ""
+  },
+  "CopyUnicodeLinkToHighlight": {
+    "message": "Copy Unicode link to highlight",
+    "description": ""
+  },
+  "CopyUrlFromTheAddressBar": {
+    "message": "Copy URL from the address bar"
+  }
+}

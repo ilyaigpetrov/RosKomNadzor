@@ -1,0 +1,34 @@
+{
+  "ExtensionName": {
+    "message": "Обход блокировок Рунета",
+    "description": "Name of the extension."
+  },
+  "ExtensionDescription": {
+    "message": "Копируйте юникодные ссылки в буфер обмена без ужасных кодировок с процентами или Punycode!",
+    "description": "Description of the extension."
+  },
+  "FOR_TESTING": {
+    "message": "FOR TESTING"
+  },
+
+  "IfToDecode": {
+    "message": "Декодировать",
+    "description": ""
+  },
+  "IfToEncodeUrlTerminators": {
+    "message": "Кодировать знаки окончания URL",
+    "description": ""
+  },
+  "Donate": {
+    "message": "Поддержать ❤",
+    "description": ""
+  },
+  "CopyUnicodeUrl": {
+    "message": "Скопировать юникодную ссылку",
+    "description": ""
+  },
+  "IconHint": {
+    "message": "Кликните для копирования юникодной ссылки в буфер обмена",
+    "description": ""
+  }
+}

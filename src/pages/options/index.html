@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      :root {
+        background: url('./gsbg.png') no-repeat;
+        padding: 0;
+        margin: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      li {
+        margin-top: 0.2rem;
+      }
+      a {
+        text-decoration: none;
+      }
+      label {
+        vertical-align: bottom;
+      }
+      @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #313131;
+        color: #bfbfbf;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>PAC-script</div>
+    </header>
+    <nav>
+      <ul>
+        <li>
+          <input type="radio" value="antizapret" name="pacScript" id="antizapret">
+          <label for="antizapret">Антизапрет</label>
+        </li>
+        <li>
+          <input type="radio" value="anticensority" name="pacScript" id="anticensority">
+          <label for="anticensority">Антицензорити</label>
+        </li>
+        <!-- li>
+          <input type="radio" value="external" name="pacScript">
+          <label for="external">Внешний:</label> <input type="text">
+        </li-->
+        <li>
+          <input type="radio" value="disabled" name="pacScript" id="disabled" checked>
+          <label for="disabled">Отключить / сброс</label>
+        </li>
+      </ul>
+      <input type="checkbox" name="reset" id="reset"> <label for="reset">Сбрасывать перед переключением</label>
+    </nav>
+    <footer style="text-align: center">
+        <a id="donate" target="_blank" data-localize="__MSG_donate__">Donate ❤</a>
+    </footer>
+    <script src="./index.mjs" type="module"></script>
+  </body>
+</html>

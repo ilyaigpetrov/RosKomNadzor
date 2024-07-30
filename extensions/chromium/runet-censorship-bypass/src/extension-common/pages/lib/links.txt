@@ -1,1 +1,0 @@
-ChromeStyle: https://cs.chromium.org/chromium/src/extensions/renderer/resources/extension.css

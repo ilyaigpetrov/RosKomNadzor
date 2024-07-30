@@ -1,7 +1,0 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <g id="icon-info" viewBox="0 0 100 100">
-    <path fill="none" stroke="currentColor" stroke-width="7" stroke-miterlimit="10"
-      d="M95,50c0,25-20,45-45,45 c-25,0-45-20-45-45 S25,5,50,5C75,5,95,25,95,45z"/>
-    <path shape-rendering="crispEdges" d="M 55,40 V 80 H 45 V 40 z m 0,-20 V 35 H 45 V 20 Z"/>
-  </g>
-</svg>

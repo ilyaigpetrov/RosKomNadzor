@@ -1,17 +1,29 @@
 {
-  "name": "subjective-good-is-evil",
-  "version": "1.0.0",
+  "name": "runet-censorship-bypass",
+  "version": "0.2.0",
   "description": "",
+  "homepage": "https://github.com/ilyaigpetrov/copy-unicode-urls#readme",
+  "main": "index.js",
   "scripts": {
-    "postinstall": "opencollective postinstall"
+    "start": "npm run clean; npm run build",
+    "build": "./tasks/build.mjs",
+    "clean": "rm -rf /_generated",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "anticensority+owners@googlegroups.com",
+  "author": "ilyaigpetrov",
+  "bugs": {
+    "url": "https://github.com/ilyaigpetrov/copy-unicode-urls/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilyaigpetrov/copy-unicode-urls.git"
+  },
   "license": "ISC",
   "dependencies": {
-    "opencollective": "^1.0.3"
+    "punycode": "^2.1.1"
   },
-  "collective": {
-    "type": "opencollective",
-    "url": "https://opencollective.com/anticensority"
+  "devDependencies": {
+    "merge": "^2.1.1",
+    "mri": "^1.2.0"
   }
 }

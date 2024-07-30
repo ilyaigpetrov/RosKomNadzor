@@ -1,8 +1,0 @@
-[ignore]
-.*/test/.*
-
-[include]
-
-[libs]
-
-[options]
