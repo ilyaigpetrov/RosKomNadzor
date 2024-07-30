@@ -4,31 +4,19 @@
     "description": "Name of the extension."
   },
   "ExtensionDescription": {
-    "message": "Копируйте юникодные ссылки в буфер обмена без ужасных кодировок с процентами или Punycode!",
+    "message": "Обход интернет-цензуры в России: https://git.io/ac-wiki",
     "description": "Description of the extension."
   },
   "FOR_TESTING": {
-    "message": "FOR TESTING"
+    "message": "ДЛЯ ТЕСТОВ"
   },
-
-  "IfToDecode": {
-    "message": "Декодировать",
-    "description": ""
+  "Version": {
+    "message": "Версия"
   },
-  "IfToEncodeUrlTerminators": {
-    "message": "Кодировать знаки окончания URL",
-    "description": ""
+  "PacUpdated": {
+    "message": "Обновлялись"
   },
   "Donate": {
-    "message": "Поддержать ❤",
-    "description": ""
-  },
-  "CopyUnicodeUrl": {
-    "message": "Скопировать юникодную ссылку",
-    "description": ""
-  },
-  "IconHint": {
-    "message": "Кликните для копирования юникодной ссылки в буфер обмена",
-    "description": ""
+    "message": "Поддержать ❤"
   }
 }

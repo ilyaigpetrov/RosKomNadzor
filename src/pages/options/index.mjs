@@ -1,3 +1,4 @@
+/*
 import { storage } from '../../lib/common-apis.mjs';
 
 donate.href = await storage.getAsync('donateUrl');
@@ -16,7 +17,7 @@ options.forEach(([key, value], i) => {
     chrome.contextMenus.update(key, { checked: target.checked });
   };
 });
-
+*/
 const textElements = document.querySelectorAll('[data-localize]');
 textElements.forEach((e) => {
   const ref = e.dataset.localize;

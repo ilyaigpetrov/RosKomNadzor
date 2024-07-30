@@ -31,7 +31,7 @@ export const render = ({ version, edition }) => {
       
     "action": {
       "default_title":
-        `__MSG___ | __MSG_Version__: ${version + localizedSuffix}`,
+        `__MSG_PacUpdated__ | __MSG_Version__: ${version + localizedSuffix}`,
       "default_popup": "/src/pages/options/index.html"
     },
     "options_ui": {

@@ -35,7 +35,7 @@ const ifAllArgsProvided = requiredFlags.reduce(
   const currentDate = new Date().toISOString().split('T')[0].replaceAll('-', '');
   const semver = process.env.npm_package_version;
   const context = {
-    version: `${semver}.${currentDate}`,
+    version: `${currentDate}.${semver}`,
     edition: args.edition,
   };
 

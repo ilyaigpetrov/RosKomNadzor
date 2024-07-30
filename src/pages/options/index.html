@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <style>
-      :root {
-        background: url('./gsbg.png') no-repeat;
+      :root, html, body {
+        /*background: url('./gsbg.png') no-repeat;*/
+        z-index: 0;
         padding: 0;
         margin: 0;
       }
@@ -26,11 +27,20 @@
         color: #bfbfbf;
         }
       }
+      img.gsbg {
+        z-index: -1;
+        position: relative;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+      }
     </style>
   </head>
   <body>
+    <img src="./gsbg.png" class="gsbg">
     <header>
-      <div>PAC-script</div>
+      PAC-script:
     </header>
     <nav>
       <ul>
@@ -42,10 +52,10 @@
           <input type="radio" value="anticensority" name="pacScript" id="anticensority">
           <label for="anticensority">Антицензорити</label>
         </li>
-        <!-- li>
+        <li>
           <input type="radio" value="external" name="pacScript">
-          <label for="external">Внешний:</label> <input type="text">
-        </li-->
+          <label for="external">Внешний:</label> <input type="url">
+        </li>
         <li>
           <input type="radio" value="disabled" name="pacScript" id="disabled" checked>
           <label for="disabled">Отключить / сброс</label>

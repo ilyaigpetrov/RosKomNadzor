@@ -10,36 +10,13 @@
   "FOR_TESTING": {
     "message": "FOR TESTING"
   },
-
-  "IfToDecode": {
-    "message": "If to decode",
-    "description": ""
+  "Version": {
+    "message": "Version"
   },
-  "IfToEncodeUrlTerminators": {
-    "message": "If to encode URL terminators",
-    "description": ""
-  },
-  "IfToDecodeMultipleTimes": {
-    "message": "If to decode multiple times",
-    "description": ""
+  "PacUpdated": {
+    "message": "Updated"
   },
   "Donate": {
-    "message": "Donate ❤",
-    "description": ""
-  },
-  "CopyUnicodeUrl": {
-    "message": "Copy Unicode URL",
-    "description": ""
-  },
-  "IconHint": {
-    "message": "Click to copy unicode URL into the clipboard",
-    "description": ""
-  },
-  "CopyUnicodeLinkToHighlight": {
-    "message": "Copy Unicode link to highlight",
-    "description": ""
-  },
-  "CopyUrlFromTheAddressBar": {
-    "message": "Copy URL from the address bar"
+    "message": "Donate ❤"
   }
 }
