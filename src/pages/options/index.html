@@ -3,30 +3,123 @@
   <head>
     <meta charset="utf-8">
     <style>
+      /*
+        Josh's Custom CSS Reset
+        https://www.joshwcomeau.com/css/custom-css-reset/
+      */
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+      * {
+        margin: 0;
+      }
+      body {
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+      }
+      img, picture, video, canvas, svg {
+        display: block;
+        max-width: 100%;
+      }
+      input, button, textarea, select {
+        font: inherit;
+      }
+      p, h1, h2, h3, h4, h5, h6 {
+        overflow-wrap: break-word;
+      }
+      #root, #__next {
+        isolation: isolate;
+      }
+      /* Reset ends */
+
+      :root {
+        background-color: black;
+        color: black;
+        color-scheme: dark;
+        border: 0 none black;
+        outline: 0 none black;
+      }
       :root, html, body {
         /*background: url('./gsbg.png') no-repeat;*/
-        z-index: 0;
         padding: 0;
         margin: 0;
       }
+      body {
+        --ribbon-color: #0075ff; /* #4169e1;*/
+        font-family: Ubuntu, Arial, sans-serif;
+        font-size: 75%;
+
+        color-scheme: light; /* Will be inverted to dark. */
+        /* COLOR INVERTION */
+        filter: invert(1);
+        padding: 10px;
+      }
+
       ul {
         list-style: none;
+        padding: 0;
       }
       li {
         margin-top: 0.2rem;
       }
-      a {
+      a, a:visited {
         text-decoration: none;
+        color: var(--ribbon-color);
       }
       label {
         vertical-align: bottom;
+        /*padding: 3px;*/
       }
+      input {
+        vertical-align: text-bottom;
+      }
+      input[type="url"] {
+        border-width: 0 0 1px 0;
+        border-color: crimson;
+        flex-grow: 1;
+        /*padding: 0 3px 0 3px;*/
+        /*width: 100%;*/
+      }
+      input[type="radio"], label {
+        cursor: pointer;
+      }
+      /*
+      #own:checked + label:after {
+        content: ":";
+      }
+      */
+      #own ~ div {
+        display: flex;
+      }
+      #disabled:checked + label {
+        color: crimson;
+      }
+
+      div.nowrap {
+        /* Don't break sentences on spaces. */
+        white-space: nowrap;
+      }
+      .use-preferred-color-scheme {
+        /*background-color: violet;
+        color: darkred;*/
+        color-scheme: light;
+      }/*
       @media (prefers-color-scheme: dark) {
-      body {
-        background-color: #313131;
-        color: #bfbfbf;
+        .use-preferred-color-scheme {
+          color-scheme: dark;
+          background-color: green;
+          color: #bfbfbf;
         }
       }
+      @media (prefers-color-scheme: light) {
+        .use-preferred-color-scheme {
+          color-scheme: dark;
+          background-color: pink;
+          color: purple;
+          border: 5px solid red;
+        }
+      }
+      /*
       img.gsbg {
         z-index: -1;
         position: relative;
@@ -35,10 +128,11 @@
         top: 0;
         bottom: 0;
       }
+      */
     </style>
   </head>
-  <body>
-    <img src="./gsbg.png" class="gsbg">
+  <body class="use-preferred-color-scheme">
+    <!--img src="./gsbg.png" class="gsbg"-->
     <header>
       PAC-script:
     </header>
@@ -53,18 +147,27 @@
           <label for="anticensority">Антицензорити</label>
         </li>
         <li>
-          <input type="radio" value="external" name="pacScript">
-          <label for="external">Внешний:</label> <input type="url">
+          <input type="radio" value="own" name="pacScript" id="own">
+          <label for="own">Свой:</label>
+          <div>
+            <input type="url" placeholder="https://example.com/proxy.pac">
+            <button>Save</button>
+          </div>
         </li>
         <li>
           <input type="radio" value="disabled" name="pacScript" id="disabled" checked>
           <label for="disabled">Отключить / сброс</label>
         </li>
       </ul>
-      <input type="checkbox" name="reset" id="reset"> <label for="reset">Сбрасывать перед переключением</label>
+      <div class="nowrap">
+        <input type="checkbox" name="reset" id="reset" checked>
+        <label for="reset">Сбрасывать перед переключением</label>
+      </div>
     </nav>
     <footer style="text-align: center">
-        <a id="donate" target="_blank" data-localize="__MSG_donate__">Donate ❤</a>
+        <a id="donate" target="_blank" data-localize="__MSG_Donate__"
+          href="https://github.com/anticensority/runet-censorship-bypass/wiki/Поддержать"
+        >Donate ❤</a>
     </footer>
     <script src="./index.mjs" type="module"></script>
   </body>
