@@ -2,8 +2,10 @@
 
 ## Prerequirements
 
-You need a globally installed `gulp-cli@2.3.0`.
-See https://gulpjs.com/docs/en/getting-started/quick-start#install-the-gulp-command-line-utility.
+* You need a globally installed `gulp-cli@3.0.0`.
+  See https://gulpjs.com/docs/en/getting-started/quick-start#install-the-gulp-command-line-utility.
+* Node v21.7.3
+* NPM 10.5.0
 
 ## Steps
 
