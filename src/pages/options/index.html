@@ -33,11 +33,20 @@
       /* Reset ends */
 
       :root {
-        background-color: black;
+        /*
+          The initial theme is light but it's quickly inverted to dark.
+          Dark theme should be the first theme user sees by default.
+          TODO: Ponder more. E.g. valid color (green) must remain the
+          same even after invertion. Also a flash/blink of colors
+          during invertion must be avoided.
+        */
+        background-color: white; /* Not transparent. */
         color: black;
-        color-scheme: dark;
-        border: 0 none black;
-        outline: 0 none black;
+        border: 0 none white;
+        outline: 0 none white;
+        color-scheme: light;
+        /* COLOR INVERTION */
+        filter: invert(0); /* TODO: temporary disabled. */
       }
       :root, html, body {
         /*background: url('./gsbg.png') no-repeat;*/
@@ -48,10 +57,6 @@
         --ribbon-color: #0075ff; /* #4169e1;*/
         font-family: Ubuntu, Arial, sans-serif;
         font-size: 75%;
-
-        color-scheme: light; /* Will be inverted to dark. */
-        /* COLOR INVERTION */
-        filter: invert(1);
         padding: 10px;
       }
 
@@ -102,7 +107,7 @@
       .use-preferred-color-scheme {
         /*background-color: violet;
         color: darkred;*/
-        color-scheme: light;
+        /*color-scheme: light;*/
       }/*
       @media (prefers-color-scheme: dark) {
         .use-preferred-color-scheme {
