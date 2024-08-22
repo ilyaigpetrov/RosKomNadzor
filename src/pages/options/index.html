@@ -40,11 +40,13 @@
           same even after invertion. Also a flash/blink of colors
           during invertion must be avoided.
         */
+        /*
         background-color: white; /* Not transparent. */
-        color: black;
+        /*color: black;
+        /*
         border: 0 none white;
-        outline: 0 none white;
-        color-scheme: light;
+        outline: 0 none white;*/
+        /*color-scheme: light;
         /* COLOR INVERTION */
         filter: invert(0); /* TODO: temporary disabled. */
       }
@@ -79,14 +81,22 @@
         vertical-align: text-bottom;
       }
       input[type="url"] {
-        border-width: 0 0 1px 0;
-        border-color: crimson;
+        /*border-width: 0 0 1px 0;
+        border-color: crimson;*/
         flex-grow: 1;
         /*padding: 0 3px 0 3px;*/
         /*width: 100%;*/
       }
       input[type="radio"], label {
         cursor: pointer;
+      }
+      #disabled:checked + label {
+        color: red;
+      }
+
+      div.nowrap {
+        /* Don't break sentences on spaces. */
+        white-space: nowrap;
       }
       /*
       #own:checked + label:after {
@@ -96,14 +106,17 @@
       #own ~ div {
         display: flex;
       }
-      #disabled:checked + label {
-        color: crimson;
+      /*
+      input#own ~ div:has(> input#customPacUrl):after {
+        border: 5px solid lime;
+        background-color: navy;
+        content: "";
       }
+      input#own ~ div:after:not(:empty) {
+        border: 5px solid pink;
+      }
+      */
 
-      div.nowrap {
-        /* Don't break sentences on spaces. */
-        white-space: nowrap;
-      }
       .use-preferred-color-scheme {
         /*background-color: violet;
         color: darkred;*/
@@ -134,40 +147,53 @@
         bottom: 0;
       }
       */
+      /*
+      input:invalid {
+        border: 5px solid red;
+      }*/
+      #customPacUrl:disabled {
+        /*background-color: grey;*/ 
+      }
     </style>
   </head>
   <body class="use-preferred-color-scheme">
     <!--img src="./gsbg.png" class="gsbg"-->
     <header>
-      PAC-script:
+      PAC-скрипт:
     </header>
     <nav>
-      <ul>
-        <li>
-          <input type="radio" value="antizapret" name="pacScript" id="antizapret">
-          <label for="antizapret">Антизапрет</label>
-        </li>
-        <li>
-          <input type="radio" value="anticensority" name="pacScript" id="anticensority">
-          <label for="anticensority">Антицензорити</label>
-        </li>
-        <li>
-          <input type="radio" value="own" name="pacScript" id="own">
-          <label for="own">Свой:</label>
-          <div>
-            <input type="url" placeholder="https://example.com/proxy.pac">
-            <button>Save</button>
-          </div>
-        </li>
-        <li>
-          <input type="radio" value="disabled" name="pacScript" id="disabled" checked>
-          <label for="disabled">Отключить / сброс</label>
-        </li>
-      </ul>
-      <div class="nowrap">
-        <input type="checkbox" name="reset" id="reset" checked>
-        <label for="reset">Сбрасывать перед переключением</label>
-      </div>
+      <form id="pacChooserForm">
+        <ul>
+          <li>
+            <input type="radio" value="antizapret" name="pacScript" id="antizapret">
+            <label for="antizapret">Антизапрет</label>
+          </li>
+          <li>
+            <input type="radio" value="anticensority" name="pacScript" id="anticensority">
+            <label for="anticensority">Антицензорити</label>
+          </li>
+          <li>
+            <input type="radio" value="own" name="pacScript" id="own" disabled>
+            <label for="own">Свой:</label>
+            <div>
+              <input id="customPacUrl" type="url" placeholder="https://example.com/proxy.pac"
+                size="27"
+                spellcheck="false" autocorrect="off" autocapitalize="off"
+                disabled required
+              >
+              <button id="editPacUrlButton" title="Редактировать">🖉</button>
+            </div>
+          </li>
+          <li>
+            <input type="radio" value="disabled" name="pacScript" id="disabled" checked>
+            <label for="disabled">Отключить / сброс</label>
+          </li>
+        </ul>
+        <div class="nowrap">
+          <input type="checkbox" name="reset" id="reset" checked>
+          <label for="reset">Сбрасывать перед переключением</label>
+        </div>
+      </form>
     </nav>
     <footer style="text-align: center">
         <a id="donate" target="_blank" data-localize="__MSG_Donate__"

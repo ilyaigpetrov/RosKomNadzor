@@ -1,7 +1,13 @@
-import { toUnicode } from '../../node_modules/punycode/punycode.es6.js';
-import { copyToClipboardAsync } from '../lib/copy-to-clipboard.mjs';
 import { storage } from '../lib/index.mjs';
 
+console.log('Main script starts...');
+
+(async () => {
+  const theState = await storage.getAsync();
+  console.log('The state is:', theState);
+})();
+
+/*
 const ID_TO_MENU_HANDLER = {};
 
 const createMenuEntry = (id, type, title, handler, contexts, rest) => {
@@ -27,63 +33,6 @@ const copyUrlInstalledPromise = (async () => {
   console.log('Migration is finished.');
 
   const options = await storage.getAsync('options');
-  const getOpt = (key) => (options.find((el) => el[0] === key)[1]);
-  console.log('Options are:', options);
-
-  const localizeUrl = (url) => {
-    console.log('Localizing url:', url);
-    let u;
-    try {
-      u = new URL(url);
-    } catch {
-      u = new URL(`http://${url}`);
-    }
-    let newHref = u.href;
-    let oldHref;
-    do {
-      oldHref = newHref;
-      newHref = decodeURI(
-        newHref
-          .replace(u.hostname, toUnicode(u.hostname))
-          /*
-            Don't decode `%25` to `%` because it causes errors while being put in GitHub URLs.
-            Test case: https://github.com/ilyaigpetrov/copy-unicode-urls/wiki/Test-%25-and-%3F
-          */
-          .replaceAll('%25', '%2525'),
-      )
-      // Encode whitespace.
-      .replace(
-        /\s/g,
-        (_, index, wholeString) => encodeURIComponent(wholeString.charAt(index)),
-      );
-    } while (getOpt('ifToDecodeMultipleTimes') && oldHref !== newHref);
-    console.log('Localized:', newHref);
-    return newHref;
-  };
-
-  const copyUrl = async (url) => {
-    if (getOpt('ifToDecode')) {
-      url = localizeUrl(url);
-    }
-    if (getOpt('ifToEncodeUrlTerminators')) {
-      console.log('Encoding terminators...');
-      /*
-        Issue #7.
-        Thunderbird sources:
-        https://searchfox.org/comm-central/source/mozilla/netwerk/streamconv/converters/mozTXTToHTMLConv.cpp#281 (mozTXTToHTMLConv::FindURLEnd)
-        These chars terminate the URL: ><"`}{)]`
-        These sequence doesn't terminate the URL: //[ (e.g. http://[1080::...)
-        These chars are not allowed at the end of the URL: .,;!?-:'
-        I apply slightly more strict rules below.
-      **/
-      const toPercentCode = (char) => '%' + char.charCodeAt(0).toString(16).toUpperCase();
-      url = url.replace(
-        /(?:[<>{}()[\]"`']|[.,;:!?-]$)/g,
-        (matchedChar, index, wholeString) => toPercentCode(matchedChar),
-      );
-    }
-    copyToClipboardAsync(url);
-  };
 
   // CheckBoxes
   const capitalizeFirstLetter = (str) => str
@@ -137,12 +86,12 @@ const copyUrlInstalledPromise = (async () => {
     'copyHighlightLink', 'normal',
     chrome.i18n.getMessage('CopyUnicodeLinkToHighlight'),
     (info) => {
-      copyUrl(`${info.pageUrl.replace(/#.*/g, '')}#:~:text=${info.selectionText}`);
+      copyUrl(`${info.pageUrl.replace(/#.*\/g, '')}#:~:text=${info.selectionText}`);
     },
     ['selection'],
   );
 
-  return copyUrl;
+  return Promise.resolve();
 
 })();
 
@@ -162,5 +111,6 @@ chrome.action.onClicked.addListener(async ({ url: urlToBeCopied }) => {
   console.log('Main waits for listeners to be installed...');
   const copyUrl = await copyUrlInstalledPromise;
   console.log('Action clicked with url:', urlToBeCopied);
-  copyUrl(urlToBeCopied);
+  //copyUrl(urlToBeCopied);
 });
+*/

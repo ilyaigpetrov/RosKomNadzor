@@ -1,3 +1,41 @@
+console.log('Options page is opening...');
+
+pacChooserForm.addEventListener('change', function (event) {
+  console.log('ON CHANGE:', event);
+  pacChooserForm.reportValidity();
+});
+
+pacChooserForm.addEventListener('formdata', (event) => {
+  event.preventDefault();
+  console.log('ON FORMDATA', event);
+  return false; // Prevent default action.
+});
+
+editPacUrlButton.onclick = function (event) {
+  event.preventDefault();
+  const lockUrl = () => { customPacUrl.disabled = true; };
+  const unlockUrl = () => { customPacUrl.disabled = false; };  
+  const ifUrlLocked = customPacUrl.disabled;
+  if (ifUrlLocked) {
+    unlockUrl();
+    return false;
+  }
+  const ifUrlValid = customPacUrl.checkValidity();
+  if (ifUrlValid) {
+    lockUrl();
+    own.disabled = false;
+      // TODO: Save to storage.
+    return false;
+  }
+  // Empty or incorrect url.
+  own.disabled = true; // `own.checked` doesn't matter here.
+  const ifUrlEmpty = !customPacUrl.value;
+  if (ifUrlEmpty) {
+    lockUrl();
+    return false;
+  }
+  return false;
+};
 /*
 import { storage } from '../../lib/common-apis.mjs';
 
@@ -18,6 +56,8 @@ options.forEach(([key, value], i) => {
   };
 });
 */
+await chrome.storage.local.get('options');
+
 const textElements = document.querySelectorAll('[data-localize]');
 textElements.forEach((e) => {
   const ref = e.dataset.localize;
