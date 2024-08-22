@@ -4,13 +4,13 @@ pacChooserForm.addEventListener('change', function (event) {
   console.log('ON CHANGE:', event);
   pacChooserForm.reportValidity();
 });
-
+/*
 pacChooserForm.addEventListener('formdata', (event) => {
   event.preventDefault();
   console.log('ON FORMDATA', event);
   return false; // Prevent default action.
 });
-
+*/
 editPacUrlButton.onclick = function (event) {
   event.preventDefault();
   const lockUrl = () => { customPacUrl.disabled = true; };
@@ -24,7 +24,7 @@ editPacUrlButton.onclick = function (event) {
   if (ifUrlValid) {
     lockUrl();
     own.disabled = false;
-      // TODO: Save to storage.
+    // TODO: Save to storage.
     return false;
   }
   // Empty or incorrect url.
@@ -32,6 +32,9 @@ editPacUrlButton.onclick = function (event) {
   const ifUrlEmpty = !customPacUrl.value;
   if (ifUrlEmpty) {
     lockUrl();
+    if (own.checked) {
+      disabled.checked = true;
+    }
     return false;
   }
   return false;
